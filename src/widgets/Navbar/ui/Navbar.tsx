@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames';
 import style from './Navbar.module.scss';
 import AppLink from 'shared/ui/AppLink/AppLink';
+import ThemeSwitch from 'shared/ui/ThemeSwitch/ThemeSwitch';
 
 interface NavbarProps {
   className?: string,
-
 }
 
 const Navbar = ({ className }: NavbarProps) => {
@@ -14,6 +14,9 @@ const Navbar = ({ className }: NavbarProps) => {
     <div
       className={classNames(style.navbar)}
     >
+      <ThemeSwitch
+        className=''
+      />
       <div
         className={style.links}
       >
