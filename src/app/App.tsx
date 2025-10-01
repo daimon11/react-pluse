@@ -1,22 +1,23 @@
-import React, { Suspense, useCallback, useContext, useState } from 'react';
-import 'app/styles/index.scss';
-import { Routes, Route, Link } from 'react-router-dom';
-import { useTheme } from 'app/providers/ThemeProvider/index';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppRouter } from './providers/router';
-import { Navbar } from 'widgets/Navbar';
+import React from 'react';
+import './styles/index.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTheme } from "app/providers/ThemeProvider";
+import { AppRouter } from "app/providers/router";
+import { Navbar } from "widgets/Navbar";
+import { SideBar } from 'widgets/SideBar';
 
 
 
 const App = () => {
-    const { theme} = useTheme();
+    const { theme } = useTheme();
 
     return (
-        <div
-            className={classNames('app', {}, [theme])}>
-
+        <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <AppRouter/>
+            <div className='content-page'>
+                <SideBar />
+                <AppRouter />
+            </div>
 
         </div>
     );
